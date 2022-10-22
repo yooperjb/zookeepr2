@@ -1,5 +1,7 @@
 const express = require('express');
 const { animals } = require('./data/animals');
+// This will set the PORT to the environment variable set by Heroku or Dreamhost or use 80
+const PORT = process.env.PORT || 80;
 // heroku app fathomless-brook-93890
 
 const app = express();
@@ -51,6 +53,6 @@ app.get('/api/animals', (req, res) => {
     res.json(results);
 });
 
-app.listen(80, () => {
-    console.log(`API server now on port 80!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
