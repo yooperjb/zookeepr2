@@ -131,11 +131,20 @@
     {
       "name": "Larry",
       "species": "lemur",
-      "diet": "",
+      "diet": "omnivore",
       "personalityTraits": [
         "hungry"
       ],
       "id": "13"
+    },
+    {
+      "name": "Fluffy",
+      "species": "Doggo",
+      "diet": "piscivore",
+      "personalityTraits": [
+        "goofy"
+      ],
+      "id": "14"
     }
   ]
 }
