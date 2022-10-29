@@ -5,6 +5,7 @@ const { zookeepers } = require("../../data/zookeepers");
 
 router.get("/zookeepers", (req, res) => {
     let results = zookeepers;
+    console.log("zookeepers", zookeepers);
     if (req.query) {
         results = filterByQuery(req.query, results);
     }

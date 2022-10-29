@@ -3,9 +3,9 @@ const $zookeeperForm = document.querySelector("#zookeeper-form");
 
 // prints zookeeper results to the page
 const printResults = resultArr => {
-  console.log(resultArr);
+  // console.log("resultArr",resultArr);
 
-  const animalHTML = resultArr.map(({ id, name, age, favoriteAnimal }) => {
+  const zookeeperHTML = resultArr.map(({ id, name, age, favoriteAnimal }) => {
     return `
   <div class="col-12 col-md-5 mb-3">
     <div class="card p-3" data-id=${id}>
@@ -19,7 +19,7 @@ const printResults = resultArr => {
     `;
   });
 
-  $displayArea.innerHTML = animalHTML.join('');
+  $displayArea.innerHTML = zookeeperHTML.join('');
 };
 
 const getZookeepers = (formData = {}) => {
@@ -28,7 +28,7 @@ const getZookeepers = (formData = {}) => {
   Object.entries(formData).forEach(([key, value]) => {
     queryUrl += `${key}=${value}&`;
   });
-
+  
   fetch(queryUrl)
     .then(response => {
       if (!response.ok) {
@@ -37,7 +37,6 @@ const getZookeepers = (formData = {}) => {
       return response.json();
     })
     .then(zookeeperArr => {
-      console.log(zookeeperArr);
       printResults(zookeeperArr);
     });
 };

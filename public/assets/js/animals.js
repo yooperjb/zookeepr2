@@ -3,7 +3,7 @@ const $displayArea = document.querySelector('#display-area');
 
 // prints animal results to the page
 const printResults = resultArr => {
-  console.log('resultsArr',resultArr);
+  // console.log('resultsArr',resultArr);
 
   const animalHTML = resultArr.map(({ id, name, personalityTraits, species, diet }) => {
     return `
@@ -30,8 +30,6 @@ const getAnimals = (formData = {}) => {
   Object.entries(formData).forEach(([key, value]) => {
     queryUrl += `${key}=${value}&`;
   });
-
-  // console.log('queryUrl', queryUrl);
 
   fetch(queryUrl)
   .then(response => {
