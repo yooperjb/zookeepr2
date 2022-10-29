@@ -1,6 +1,7 @@
 const $displayArea = document.querySelector('#display-area');
 const $zookeeperForm = document.querySelector("#zookeeper-form");
 
+// prints zookeeper results to the page
 const printResults = resultArr => {
   console.log(resultArr);
 
@@ -41,7 +42,7 @@ const getZookeepers = (formData = {}) => {
     });
 };
 
-// when zookeeper sumbit is selected
+// when "Get Zookeepers" button is clicked
 const handleGetZookeepersSubmit = event => {
   event.preventDefault();
   const nameHTML = $zookeeperForm.querySelector('[name="name"]');
@@ -57,4 +58,5 @@ const handleGetZookeepersSubmit = event => {
 
 // submit event listener on zookeeper form
 $zookeeperForm.addEventListener('submit', handleGetZookeepersSubmit);
+
 getZookeepers();

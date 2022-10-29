@@ -1,6 +1,7 @@
 const $animalForm = document.querySelector('#animal-form');
 const $zookeeperForm = document.querySelector('#zookeeper-form');
 
+// when "Add Animal" button is clicked
 const handleAnimalFormSubmit = event => {
   event.preventDefault();
 
@@ -48,7 +49,7 @@ const handleAnimalFormSubmit = event => {
 
 };
 
-// when zookeeper submit button is selected
+// when "Add Zookeeper" submit button is clicked
 const handleZookeeperFormSubmit = event => {
   event.preventDefault();
 
@@ -57,6 +58,7 @@ const handleZookeeperFormSubmit = event => {
   const age = parseInt($zookeeperForm.querySelector('[name="age"]').value);
   const favoriteAnimal = $zookeeperForm.querySelector('[name="favorite-animal"]').value;
 
+  // send POST request if successful add new zookeeper to json file
   const zookeeperObj = { name, age, favoriteAnimal };
   console.log(zookeeperObj);
   fetch('api/zookeepers', {

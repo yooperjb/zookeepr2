@@ -1,6 +1,7 @@
 const $animalForm = document.querySelector('#animals-form');
 const $displayArea = document.querySelector('#display-area');
 
+// prints animal results to the page
 const printResults = resultArr => {
   console.log('resultsArr',resultArr);
 
